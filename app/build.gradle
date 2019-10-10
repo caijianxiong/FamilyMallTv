@@ -1,0 +1,128 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            java.srcDirs = ['src/main/java', 'src/main/aidl']
+        }
+    }
+    defaultConfig {
+        applicationId "c.liyueyun.mjmall.tv"
+        minSdkVersion 17
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0.0"
+        flavorDimensions "versionCode"
+        /*ndk { abiFilters "armeabi-v7a" ,"arm64-v8a","x86" }*/
+        ndk { abiFilters "armeabi-v7a" }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    signingConfigs {
+        sign {
+            File strFile = new File("y2w.jks")
+            storeFile file(strFile)
+            storePassword "5400500"
+            keyAlias "key"
+            keyPassword "5400500"
+        }
+    }
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.sign
+            minifyEnabled false
+            debuggable true
+        }
+
+        release {
+            signingConfig signingConfigs.sign
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            // 输出apk名称为cotv_business_v1.0_znds.apk
+            if (variant.buildType.name.contains('debug')) {
+                def date = new Date().format("MMdd(HHmm)", TimeZone.getTimeZone("GMT+08"))
+                outputFileName = "v${defaultConfig.versionName}_${variant.productFlavors[0].name}_${date}.apk"
+            } else {
+                outputFileName = "mallTv_biz_v${defaultConfig.versionName}_${variant.productFlavors[0].name}.apk"
+            }
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+
+    productFlavors {
+        liyueyun {}
+        znds {}
+        xiaomi {}
+        lielanghr {}
+        sharp {}
+//        whiteboard {}
+//        whiteboard_konka {}
+//        whiteboard_show {}
+        coocaa {}
+        tcl{}
+//        rk3288 {}
+    }
+
+    //productFlavors遍历
+    productFlavors.each {
+        flavor ->
+            //测试环境不做统一处理
+            if (flavor.name == "coocaa") {
+                flavor.manifestPlaceholders = [CHANNEL_VALUE           : name,
+                                               SYSTEM_USER             : "",
+                                               PERMISSION_SYSTEM_NET   : "android.permission.INTERNET",
+                                               PERMISSION_BOOT         : "android.permission.INTERNET",
+                                               PERMISSION_SYSTEM_WINDOW: "android.permission.INTERNET"]
+            } else {
+                flavor.manifestPlaceholders = [CHANNEL_VALUE           : name,
+                                               SYSTEM_USER             : "",
+                                               PERMISSION_SYSTEM_NET   : "android.permission.INTERNET",
+                                               PERMISSION_BOOT         : "android.permission.RECEIVE_BOOT_COMPLETED",
+                                               PERMISSION_SYSTEM_WINDOW: "android.permission.SYSTEM_ALERT_WINDOW"]
+            }
+    }
+
+    useLibrary "org.apache.http.legacy"
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //其中latest.release指代最新版本号，也可以指定明确的版本号，例如2.1.5
+    implementation 'com.android.support:recyclerview-v7:23.4.0'
+    implementation 'com.android.support:appcompat-v7:23.4.0'
+    implementation 'com.android.support:cardview-v7:23.4.0'
+    implementation 'eu.the4thfloor.volley:com.android.volley:2015.05.28'
+    implementation 'com.google.code.gson:gson:2.8.0'
+    implementation 'com.google.zxing:zxing-parent:3.3.0'
+    implementation 'com.google.zxing:core:3.3.0'
+    implementation 'com.github.barteksc:pdfium-android:1.5.0'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation files('libs/yun2win-0.1-1205.jar')
+    implementation 'com.android.support:design:23.4.0'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation files('libs/AppAnalytics_Android_SDK_V4.0.22.jar')
+    implementation 'jp.wasabeef:glide-transformations:2.0.2'
+}

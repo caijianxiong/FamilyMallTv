@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="c.liyueyun.mjmall.tv">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+
+
+    <uses-permission android:name="${PERMISSION_SYSTEM_NET}" /><!--系统权限网络连接-->
+    <uses-permission android:name="${PERMISSION_BOOT}" /><!--敏感权限,开机广播-->
+    <uses-permission android:name="${PERMISSION_SYSTEM_WINDOW}" /><!--敏感权限,悬浮窗-->
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:name="android.hardware.camera.flash" />
+    <uses-feature
+        android:name="android.hardware.type.television"
+        android:required="true" />
+
+    <application
+        android:name=".base.base.MyApplication"
+        android:allowBackup="true"
+        android:excludeFromRecents="true"
+        android:icon="@mipmap/app_icon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppThemeBg"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".tv.ui.activity.SplashActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppThemeWelcome">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".tv.ui.activity.mall.MallHomeActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".tv.ui.activity.mall.mallEvent.MallEventActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".tv.ui.activity.mall.mallProd.MallProdActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".tv.ui.activity.VideoActivity"
+            android:noHistory="true"
+            android:screenOrientation="landscape" />
+        <!--安卓7.0文件读写适配-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="c.liyueyun.mjmall.tv.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/kt_file_paths" />
+        </provider>
+
+        <!-- song 内容提供者 -->
+        <provider
+            android:name=".base.ContentProvider.UserContentProvider"
+            android:authorities="c.liyueyun.mjmall.tv.ContentProvider"
+            android:exported="true" />
+
+        <!-- talkingdata -->
+        <!--<meta-data-->
+            <!--android:name="TD_APP_ID"-->
+            <!--android:value="2EA70AC1CABE4956AE4D6F493A721C43" />-->
+        <!--<meta-data-->
+            <!--android:name="TD_CHANNEL_ID"-->
+            <!--android:value="${CHANNEL_VALUE}" />-->
+        <!--&lt;!&ndash; 腾讯bugly 配置APP渠道号 &ndash;&gt;-->
+        <!--<meta-data-->
+            <!--android:name="BUGLY_APP_CHANNEL"-->
+            <!--android:value="${CHANNEL_VALUE}" />-->
+        <!--&lt;!&ndash; Glide图片缓冲 &ndash;&gt;-->
+        <meta-data
+            android:name="c.liyueyun.mjmall.tv.base.glide.GlideCache"
+            android:value="GlideModule" />
+        <meta-data
+            android:name="c.liyueyun.mjmall.tv.base.glide.UnsafeOkHttpGlideModule"
+            android:value="GlideModule" />
+
+    </application>
+
+</manifest>

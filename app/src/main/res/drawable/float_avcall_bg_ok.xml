@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--选中效果-->
+    <item android:state_focused="true">
+        <shape android:shape="rectangle" >
+            <solid android:color="#53ea53" />
+            <corners android:radius="@dimen/dp_1080p_1000px"/>
+        </shape>
+    </item>
+
+    <item android:state_focused="false">
+        <shape android:shape="rectangle" >
+            <corners android:radius="@dimen/dp_1080p_1000px"/>
+            <stroke android:width="@dimen/dp_1080p_4px" android:color="#2a3545" />
+        </shape>
+    </item>
+
+</selector>

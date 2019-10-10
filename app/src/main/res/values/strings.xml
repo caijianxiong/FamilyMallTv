@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">每家优选</string>
+    <string name="capture_info_2">对准『 谈吧 』主界面下方的二维码</string>
+    <string name="bind_no">未登录</string>
+    <string name="main_call">发起视讯会议</string>
+    <string name="main_compay">企业服务</string>
+    <string name="main_app">企业应用</string>
+    <string name="main_info">关于</string>
+    <string name="qr_hint">正在生成二维码，请稍等</string>
+    <string name="qr_info">请用客户端扫描二维码登录会议</string>
+    <string name="avcall_title">会议室名字</string>
+    <string name="time_default">00:00</string>
+    <string name="info_title">关于</string>
+    <string name="setting_title">设置</string>
+    <string name="info_our">关于我们</string>
+    <string name="info_down">客户端下载</string>
+    <string name="info_setting">TV设置</string>
+    <string name="info_help">帮助</string>
+    <!--dialog-->
+    <string name="dialog_yes">确定</string>
+    <string name="dialog_no">取消</string>
+    <string name="exit_title">提示!</string>
+    <string name="exit_app_message">确认退出程序？</string>
+    <!--企业服务-->
+    <string name="server_title">服务</string>
+    <string name="btn_collect">收藏机构</string>
+    <string name="btn_look">查看评价</string>
+    <string name="btn_canel">取消</string>
+    <string name="btn_ok_order">确定预约</string>
+    <string name="server_item">法律</string>
+
+    <string name="loading">加载中...</string>
+    <string name="addmemgrups">正在添加中...</string>
+
+</resources>

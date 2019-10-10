@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/dp_1080p_12px"
+    android:paddingRight="@dimen/dp_1080p_12px"
+    android:focusable="true"
+    android:clickable="true">
+
+    <ImageView
+        android:id="@+id/iv_mallfragmentitem_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/dp_1080p_4px"
+        android:scaleType="centerCrop"
+        android:visibility="visible"/>
+
+    <RelativeLayout
+        android:id="@+id/rlay_mallfragmentitem_prod"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/dp_1080p_6px"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/iv_mallfragmentitem_prodimg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/dp_1080p_200px"
+            android:scaleType="centerCrop" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1080p_200px"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:background="@color/gray"
+            android:paddingLeft="@dimen/dp_1080p_30px">
+            <TextView
+                android:id="@+id/tv_mallfragmentitem_name"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/sp_1080p_34px"
+                android:textColor="@color/colorPrimaryDark"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/tv_mallfragmentitem_prise"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/sp_1080p_34px"
+                    android:textColor="@color/Color_Red" />
+                <TextView
+                    android:id="@+id/tv_mallfragmentitem_rebate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dp_1080p_26px"
+                    android:gravity="center_vertical|right"
+                    android:textSize="@dimen/sp_1080p_20px"
+                    android:textColor="@color/Color_Red" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:duplicateParentState="true"
+        android:background="@drawable/angle_frame_selector"/>
+</RelativeLayout>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="@dimen/dp_1080p_120px"
+    android:paddingBottom="@dimen/dp_1080p_94px"
+    android:paddingLeft="@dimen/dp_1080p_94px"
+    android:paddingRight="@dimen/dp_1080p_94px">
+
+    <RelativeLayout
+        android:id="@+id/rlay_mallprod_imgshow"
+        android:layout_width="@dimen/dp_1080p_720px"
+        android:layout_height="match_parent">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/iv_mallprod_poster"
+            app:riv_corner_radius="@dimen/dp_1080p_20px"
+            android:layout_width="@dimen/dp_1080p_720px"
+            android:layout_height="@dimen/dp_1080p_700px"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop"/>
+
+        <HorizontalScrollView
+            android:layout_width="@dimen/dp_1080p_680px"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/iv_mallprod_poster"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true">
+            <LinearLayout
+                android:id="@+id/llay_mallprod_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|bottom"
+                android:orientation="horizontal"/>
+        </HorizontalScrollView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/rlay_mallprod_imgshow"
+        android:layout_marginLeft="@dimen/dp_1080p_140px"
+        android:layout_alignParentRight="true">
+
+        <TextView
+            android:id="@+id/tv_mallprod_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="名字"
+            android:textSize="@dimen/sp_1080p_56px"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/tv_mallprod_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_mallprod_name"
+            android:layout_marginTop="@dimen/dp_1080p_62px"
+            android:text="介绍"
+            android:textSize="@dimen/sp_1080p_34px"
+            android:lineSpacingExtra="@dimen/dp_1080p_40px"
+            android:textColor="@color/gray"/>
+
+        <TextView
+            android:id="@+id/tv_mallprod_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_mallprod_repricefix"
+            android:layout_marginBottom="@dimen/dp_1080p_60px"
+            android:text="原价"
+            android:textSize="@dimen/sp_1080p_40px"
+            android:textColor="@color/gray_normal"/>
+
+        <TextView
+            android:id="@+id/tv_mallprod_repricefix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_mallprod_tel"
+            android:layout_marginBottom="@dimen/dp_1080p_70px"
+            android:text="活动价:"
+            android:textColor="@color/Color_Red"
+            android:textSize="@dimen/sp_1080p_40px" />
+
+        <TextView
+            android:id="@+id/tv_mallprod_reprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_mallprod_repricefix"
+            android:layout_marginLeft="@dimen/dp_1080p_10px"
+            android:layout_above="@+id/tv_mallprod_tel"
+            android:layout_marginBottom="@dimen/dp_1080p_70px"
+            android:text="99.00"
+            android:textSize="@dimen/sp_1080p_66px"
+            android:textColor="@color/Color_Red"/>
+
+        <TextView
+            android:id="@+id/tv_mallprod_tel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dp_1080p_10px"
+            android:text="联系电话"
+            android:textSize="@dimen/sp_1080p_34px"
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:id="@+id/iv_mallprod_qrcode"
+            android:layout_width="@dimen/dp_1080p_300px"
+            android:layout_height="@dimen/dp_1080p_300px"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:padding="@dimen/dp_1080p_30px"
+            android:background="@mipmap/mallprod_qrcode_bg"/>
+
+    </RelativeLayout>
+</RelativeLayout>

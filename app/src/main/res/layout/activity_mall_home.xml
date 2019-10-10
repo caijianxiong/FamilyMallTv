@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlay_mallhome_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1080p_220px">
+        <ImageView
+            android:id="@+id/iv_mallhome_logo"
+            android:layout_width="@dimen/dp_1080p_522px"
+            android:layout_height="@dimen/dp_1080p_80px"
+            android:layout_marginLeft="@dimen/dp_1080p_54px"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"/>
+        <c.liyueyun.mjmall.tv.tv.ui.activity.mall.MallBarView
+            android:id="@+id/mbv_mallhome_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_1080p_80px"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_1080p_54px"/>
+    </RelativeLayout>
+    <c.liyueyun.mjmall.tv.tv.ui.widget.NoScrollViewPager
+        android:id="@+id/vpage_mallhome_show"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:descendantFocusability="beforeDescendants"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_marginBottom="@dimen/dp_1080p_30px"/>
+</LinearLayout>

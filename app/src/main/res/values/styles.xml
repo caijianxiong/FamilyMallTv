@@ -1,0 +1,394 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppThemeWelcome" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@mipmap/launch_bg</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppThemeBg" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@mipmap/avcall_main_bg</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="loading_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="DialogScaleStyle" parent="android:style/Theme.Dialog">
+        <!--内容区域背景色-->
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--dialog动画-->
+        <item name="android:windowAnimationStyle">@style/MyDialogAnimStyle</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <!--设置弹窗全屏背景是否变暗-->
+        <!--<item name="android:backgroundDimEnabled">false</item>-->
+    </style>
+
+    <style name="main2_button">
+        <item name="android:textSize">@dimen/sp_1080p_36px</item>
+        <item name="android:textColor">@drawable/button_textcolor_selector</item>
+        <item name="android:background">@drawable/main2_btn_bg_selector</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="main3_button">
+        <item name="android:textSize">@dimen/sp_1080p_30px</item>
+        <item name="android:textColor">@drawable/button_textcolor_selector</item>
+        <item name="android:background">@drawable/main2_btn_bg_selector</item>
+    </style>
+
+    <!-- 来电进度条 -->
+    <style name="ProgressBar_call" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:maxHeight">50dip</item>
+        <item name="android:minHeight">2dip</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:indeterminateDrawable">
+            @android:drawable/progress_indeterminate_horizontal
+        </item>
+        <item name="android:progressDrawable">@drawable/progressbar_call</item>
+    </style>
+
+    <!-- 视频进度条 -->
+    <style name="ProgressBar_video" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:maxHeight">50dip</item>
+        <item name="android:minHeight">2dip</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:indeterminateDrawable">
+            @android:drawable/progress_indeterminate_horizontal
+        </item>
+        <item name="android:progressDrawable">@drawable/progressbar_video</item>
+    </style>
+
+    <style name="myTransparent">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+    </style>
+
+    <!--悬浮窗动画-->
+    <style name="float_avcall_anim">
+        <item name="android:windowEnterAnimation">@anim/float_animation_in</item>
+        <item name="android:windowExitAnimation">@anim/float_animation_exit</item>
+    </style>
+
+    <!--联系人导航菜单的文字样式-->
+    <style name="bar_contact_default_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_1080p_40px</item>
+        <item name="android:textColor">@drawable/mian2_btn_textcolor_selector</item>
+        <item name="android:background">@drawable/menubar_item_bg_selector</item>
+        <item name="android:focusable">true</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:paddingBottom">@dimen/dp_1080p_30px</item>
+    </style>
+
+
+    <style name="bar_contact_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_1080p_32px</item>
+        <item name="android:textColor">@drawable/mian2_btn_textcolor_selector</item>
+        <item name="android:background">@drawable/menubar_item_bg_selector</item>
+        <item name="android:paddingBottom">@dimen/dp_1080p_28px</item>
+        <item name="android:focusable">true</item>
+        <item name="android:maxEms">5</item>
+        <item name="android:gravity">left|center_vertical</item>
+    </style>
+
+    <!--通话导航菜单的文字样式-->
+    <style name="callbar_text">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/dp_1080p_120px</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">@dimen/sp_1080p_32px</item>
+        <item name="android:textColor">@drawable/mian2_btn_textcolor_selector</item>
+        <item name="android:background">@drawable/menubar_item_bg_selector</item>
+        <item name="android:focusable">true</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!--通话导航菜单的文字样式-->
+    <style name="addbar_text">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/dp_1080p_120px</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">@dimen/sp_1080p_32px</item>
+        <item name="android:textColor">@drawable/mian2_btn_textcolor_selector</item>
+        <item name="android:background">@drawable/menubar_item_bg_selector</item>
+        <item name="android:focusable">true</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!--数字键盘-->
+    <style name="numberKey_button">
+        <item name="android:layout_height">@dimen/dp_1080p_60px</item>
+        <item name="android:layout_width">@dimen/dp_1080p_60px</item>
+        <item name="android:textSize">@dimen/sp_1080p_36px</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/numberkey_bg_selector</item>
+        <item name="android:onClick">onClick</item>
+        <item name="android:layout_marginLeft">@dimen/dp_1080p_16px</item>
+        <item name="android:layout_marginRight">@dimen/dp_1080p_16px</item>
+    </style>
+
+    <!--通话拨打选择对象框-->
+    <style name="MemberDialog" parent="android:style/Theme.Dialog">
+        <item name="android:background">#4a4f7a</item>
+        <item name="android:windowBackground">@color/black_20_transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+    </style>
+
+    <style name="transparentDialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item><!--半透明-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowBackground">@color/black_20_transparent</item><!--背景透明-->
+        <item name="android:backgroundDimEnabled">false</item><!--模糊-->
+    </style>
+
+    <style name="fullScreenDialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item><!--半透明-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowBackground">@color/transparent</item><!--背景透明-->
+        <item name="android:backgroundDimEnabled">false</item><!--模糊-->
+    </style>
+
+    <style name="SettingRLStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_1080p_100px</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">@drawable/tvsetting_item_bg_selector</item>
+        <item name="android:layout_marginTop">@dimen/dp_1080p_20px</item>
+    </style>
+
+    <style name="SettingIVStyle">
+        <item name="android:layout_width">@dimen/dp_1080p_244px</item>
+        <item name="android:layout_height">@dimen/dp_1080p_44px</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">@dimen/dp_1080p_40px</item>
+        <item name="android:background">@drawable/tvsetting_name_selector</item>
+        <item name="android:duplicateParentState">true</item>
+    </style>
+
+    <style name="SettingTVStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@drawable/tvsetting_text_color_selector</item>
+        <item name="android:textSize">@dimen/sp_1080p_36px</item>
+        <item name="android:layout_marginLeft">@dimen/dp_1080p_40px</item>
+        <item name="android:duplicateParentState">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <!--语音悬浮窗动画-->
+    <style name="float_voice_anim">
+        <item name="android:windowEnterAnimation">@anim/wake_animation_in</item>
+        <item name="android:windowExitAnimation">@anim/wake_animation_out</item>
+    </style>
+
+    <style name="AVCallIVStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/dp_1080p_30px</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <!--song 设置界面 start-->
+    <style name="SettingClickLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_1080p_110px</item>
+        <item name="android:background">@drawable/tvsetting_item_bg_selector</item>
+        <item name="android:layout_marginBottom">@dimen/dp_1080p_20px</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+    <style name="SettingSelectLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_1080p_110px</item>
+        <item name="android:background">@drawable/tvsetting_item_bg_selector</item>
+        <item name="android:layout_marginTop">@dimen/dp_1080p_20px</item>
+        <item name="android:focusable">true</item>
+    </style>
+    <style name="SettingNameStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginLeft">@dimen/dp_1080p_40px</item>
+        <item name="android:duplicateParentState">true</item>
+        <item name="android:gravity">center_vertical|left</item>
+        <item name="android:textColor">@drawable/tvsetting_text_color_selector</item>
+        <item name="android:textSize">@dimen/sp_1080p_36px</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="SettingClickTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/dp_1080p_44px</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">@dimen/dp_1080p_40px</item>
+        <item name="android:duplicateParentState">true</item>
+        <item name="android:background">@drawable/tvsetting_name_selector</item>
+        <item name="android:textColor">@drawable/tvsetting_text_color_selector</item>
+        <item name="android:textSize">@dimen/sp_1080p_34px</item>
+        <item name="android:gravity">center_vertical|right</item>
+        <item name="android:paddingRight">@dimen/dp_1080p_50px</item>
+    </style>
+    <!--<style name="SettingSelectTextStyle">-->
+        <!--<item name="android:layout_width">@dimen/dp_1080p_244px</item>-->
+        <!--<item name="android:layout_height">@dimen/dp_1080p_44px</item>-->
+        <!--<item name="android:layout_centerVertical">true</item>-->
+        <!--<item name="android:layout_alignParentRight">true</item>-->
+        <!--<item name="android:layout_marginRight">@dimen/dp_1080p_40px</item>-->
+        <!--<item name="android:duplicateParentState">true</item>-->
+        <!--<item name="android:background">@drawable/tvsetting_btn_bg_selector</item>-->
+        <!--<item name="android:textColor">@drawable/tvsetting_text_color_selector</item>-->
+        <!--<item name="android:textSize">@dimen/sp_1080p_34px</item>-->
+        <!--<item name="android:gravity">center</item>-->
+        <!--<item name="android:clickable">true</item>-->
+    <!--</style>-->
+    <style name="SettingTvNameImgStyle">
+        <item name="android:layout_width">@dimen/dp_1080p_46px</item>
+        <item name="android:layout_height">@dimen/dp_1080p_46px</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">@dimen/dp_1080p_40px</item>
+        <item name="android:src">@drawable/tvname_item_img_selector</item>
+    </style>
+    <!--设置界面 end-->
+
+    <style name="clubDialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item><!--半透明-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowBackground">@color/transparent</item><!--背景透明-->
+        <item name="android:backgroundDimEnabled">false</item><!--模糊-->
+    </style>
+
+    <!--个人名片-->
+    <style name="BusinesscardMarkStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/dp_1080p_30px</item>
+        <item name="android:layout_marginBottom">@dimen/dp_1080p_2px</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/sp_1080p_30px</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingLeft">@dimen/sp_1080p_20px</item>
+        <item name="android:paddingRight">@dimen/sp_1080p_20px</item>
+    </style>
+    <style name="BusinesscardTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical|left</item>
+        <item name="android:textSize">@dimen/sp_1080p_30px</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- popup window 显示消失动画-->
+    <style name="PopWindowAnimStyle"  parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/pop_enter</item>
+        <!-- 指定显示的动画xml  -->
+        <item name="android:windowExitAnimation">@anim/pop_exit</item>
+        <!-- 指定消失的动画xml  -->
+    </style>
+
+    <!--dialog 显示消失动画-->
+    <style name="MyDialogAnimStyle"  parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_out</item>
+    </style>
+
+
+    <style name="DialogSlidRightStyle" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_right_slide_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_right_slide_out</item>
+    </style>
+
+    <style name="DialogSlidBottomStyle" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_bottom_slide_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_bottom_slide_out</item>
+    </style>
+
+
+    <style name="DialogSlidRightAnimStyle" parent="android:style/Theme.Dialog">
+        <!--内容区域背景色-->
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--dialog动画-->
+        <item name="android:windowAnimationStyle">@style/DialogSlidRightStyle</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <!--设置弹窗全屏背景是否变暗-->
+        <!--<item name="android:backgroundDimEnabled">false</item>-->
+    </style>
+
+    <style name="DialogSlidBottomAnimStyle" parent="android:style/Theme.Dialog">
+        <!--内容区域背景色-->
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--dialog动画-->
+        <item name="android:windowAnimationStyle">@style/DialogSlidBottomStyle</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <!--设置弹窗全屏背景是否变暗-->
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+
+
+    <style name="Dialog" parent="android:style/Theme.Dialog">
+        <!--内容区域背景色-->
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--dialog动画-->
+        <!--<item name="android:windowAnimationStyle">@style/MyDialogAnimStyle</item>-->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <!--设置弹窗全屏背景是否变暗-->
+        <!--<item name="android:backgroundDimEnabled">false</item>-->
+    </style>
+
+
+    <style name="MyToast" parent="Base.Animation.AppCompat.Dialog">
+        <item name="android:windowEnterAnimation">@anim/enter_alpha</item>
+        <item name="android:windowExitAnimation">@anim/out_alpha</item>
+    </style>
+
+    <style name="SettingSelectTextStyle">
+        <item name="android:layout_width">@dimen/dp_1080p_244px</item>
+        <item name="android:layout_height">@dimen/dp_1080p_44px</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">@dimen/dp_1080p_40px</item>
+        <item name="android:duplicateParentState">true</item>
+        <item name="android:background">@drawable/tvsetting_btn_bg_selector</item>
+        <item name="android:textColor">@drawable/tvsetting_text_color_selector</item>
+        <item name="android:textSize">@dimen/sp_1080p_34px</item>
+        <item name="android:gravity">center</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+</resources>

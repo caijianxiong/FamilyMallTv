@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tvname_pre">
+        <item>会议室</item>
+        <item>办公室</item>
+        <item>会客厅</item>
+        <item>老板的</item>
+        <item>1号</item>
+        <item>2号</item>
+        <item>3号</item>
+        <item>4号</item>
+    </string-array>
+
+    <string-array name="tvname_fix">
+        <item>电子白板</item>
+        <item>笔记本</item>
+        <item>广告机</item>
+        <item>墙面屏</item>
+        <item>拼接屏</item>
+        <item>电视</item>
+        <item>大屏幕</item>
+        <item>显示器</item>
+    </string-array>
+
+</resources>

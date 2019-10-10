@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/backImage"
+        android:layout_width="@dimen/dp_1080p_144px"
+        android:layout_height="@dimen/dp_1080p_144px"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/loading_bg"/>
+
+    <ImageView
+        android:layout_width="@dimen/dp_1080p_144px"
+        android:layout_height="@dimen/dp_1080p_144px"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/loading_top"/>
+
+    <TextView
+        android:id="@+id/tv_mydialog_text"
+        android:layout_width="@dimen/dp_1080p_800px"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/backImage"
+        android:layout_marginTop="@dimen/dp_1080p_50px"
+        android:gravity="center"
+        android:text="狂奔中,请稍后..."
+        android:textSize="@dimen/sp_1080p_40px"
+        android:textColor="@color/white"/>
+</RelativeLayout>

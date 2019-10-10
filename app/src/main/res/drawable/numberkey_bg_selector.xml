@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--选中效果-->
+    <item android:state_focused="true" android:state_pressed="false" android:drawable="@mipmap/numberkey_num_selected"/>
+
+    <!--点击效果-->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle" >
+            <solid android:color="#c78f21" />
+            <corners android:radius="@dimen/dp_1080p_1000px"/>
+        </shape>
+    </item>
+    <!--默认效果-->
+    <item>
+        <shape android:shape="oval" >
+            <solid android:color="#1a000000"/>
+            <stroke
+                android:width="@dimen/dp_1080p_10px"
+                android:color="@color/transparent"/>
+            <coSize android:width="@dimen/dp_1080p_80px"
+            android:height="@dimen/dp_1080p_80px"/>
+        </shape>
+    </item>
+
+</selector>

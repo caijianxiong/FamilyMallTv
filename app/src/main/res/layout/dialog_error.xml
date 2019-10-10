@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_20_transparent">
+
+    <RelativeLayout
+        android:layout_width="@dimen/dp_1080p_800px"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingTop="@dimen/dp_1080p_40px"
+        android:paddingLeft="@dimen/dp_1080p_100px"
+        android:paddingRight="@dimen/dp_1080p_100px"
+        android:paddingBottom="@dimen/dp_1080p_20px"
+        android:background="@drawable/dialog_bg">
+        <TextView
+            android:id="@+id/tv_dialogerror_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="温馨提示"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_1080p_50px"/>
+
+        <TextView
+            android:id="@+id/tv_dialogerror_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/tv_dialogerror_title"
+            android:layout_marginTop="@dimen/dp_1080p_60px"
+            android:gravity="center"
+            android:text="确定退出视频"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_1080p_42px"/>
+
+        <Button
+            android:id="@+id/btn_dialogerror_Button"
+            android:layout_width="@dimen/dp_1080p_240px"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_dialogerror_msg"
+            android:layout_marginTop="@dimen/dp_1080p_30px"
+            android:layout_centerHorizontal="true"
+            style="@style/main2_button"
+            android:text="确定" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

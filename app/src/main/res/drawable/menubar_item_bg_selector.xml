@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:state_focused="true">
+        <bitmap android:src="@drawable/menubar_item_bg" android:tileMode="disabled" android:gravity="center_horizontal|bottom" />
+    </item>
+    <!--<item android:state_selected="true" >-->
+        <!--<bitmap android:src="@mipmap/menubar_item_bg" android:tileMode="disabled" android:gravity="bottom" />-->
+    <!--</item>-->
+    <item android:drawable="@color/transparent"/>
+</selector>
